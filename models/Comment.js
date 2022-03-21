@@ -13,7 +13,7 @@ Comment.init(
             primaryKey: true,
             autoIncrement: true
         },
-        text: {
+        comment_text: {
             type: DataTypes.TEXT,
             allowNull: false
         },
