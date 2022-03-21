@@ -17,27 +17,21 @@ router.get('/:id', (req, res) => {
     User.findOne({
         attributes: { exclude: ['password'] },
         where: {
-        id: req.params.id
+            id: req.params.id
         },
         include: [
-        {
-            model: Post,
-            attributes: ['id', 'title', 'post_url', 'created_at']
-        },
-        {
-            model: Comment,
-            attributes: ['id', 'comment_text', 'created_at'],
-            include: {
-            model: Post,
-            attributes: ['title']
-        }
-        },
-        {
-            model: Post,
-            attributes: ['title'],
-            through: Vote,
-            as: 'voted_posts'
-        }
+            {
+                model: Post,
+                attributes: ['id', 'title', 'created_at']
+            },
+            {
+                model: Comment,
+                attributes: ['id', 'comment_text', 'created_at'],
+                include: {
+                    model: Post,
+                    attributes: ['title']
+                }
+            }
         ]
     })
     .then(dbUserData => {
@@ -54,7 +48,6 @@ router.get('/:id', (req, res) => {
 });
 
 router.post('/', (req, res) => {
-    // expects {username: 'Lernantino', email: 'lernantino@gmail.com', password: 'password1234'}
     User.create({
         username: req.body.username,
         email: req.body.email,
@@ -79,7 +72,7 @@ router.post('/login', (req, res) => {
   // expects {email: 'lernantino@gmail.com', password: 'password1234'}
     User.findOne({
         where: {
-        email: req.body.email
+            email: req.body.email
         }
     }).then(dbUserData => {
         if (!dbUserData) {
