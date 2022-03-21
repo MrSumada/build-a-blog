@@ -1,22 +1,23 @@
 const router = require('express').Router();
-const sequelize = require('../../config/connection');
+// const sequelize = require('../../config/connection');
 const { User, Comment, Post } = require('../../models');
 // const withAuth = require('../../utils/auth');
 
 router.get('/', (req, res) => {
     Post.findAll({
         attributes: ['id', 'title', 'blog_text', 'created_at'],
-        include: [{
+        include: [
+        {
             model: User,
             attributes: ['username']
         },
         {
-        model: Comment,
-        attributes: ['comment_text', 'created_at'],
-        include: {
-            model: User,
-            attributes: ['username']
-            }
+            model: Comment,
+            attributes: ['comment_text', 'created_at'],
+            include: {
+                model: User,
+                attributes: ['username']
+                }
         }]
     })
     .then(dbPostData => res.json(dbPostData))
@@ -43,7 +44,7 @@ router.get('/:id', (req, res) => {
                 include: {
                     model: User,
                     attributes: ['username']
-                }
+                    }
             }
         ]
     })
