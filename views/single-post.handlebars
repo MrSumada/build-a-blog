@@ -1,0 +1,27 @@
+<article class="post">
+    <div class="title">
+        <h3>{{post.title}}</h3>
+        <p class="date-info">{{format_date post.created_at}}</p>
+    <div class="blog_text">
+        <p>{{post.blog_text}}</p>
+    </div>
+</article>
+
+{{!-- {{#if loggedIn}} --}}
+<form class="comment-form">
+    <div>
+        <textarea name="comment-body"></textarea>
+    </div>
+
+    <div>
+        <button type="submit">add comment</button>
+        <button type="button" class="upvote-btn">upvote</button>
+    </div>
+</form>
+{{!-- {{/if}} --}}
+
+{{> comments post.comments }}
+
+{{!-- {{#if loggedIn}} --}}
+{{!-- <script src="/javascript/comment.js"></script> --}}
+{{!-- {{/if}} --}}
