@@ -10,7 +10,7 @@
             <label for="blog-text">Post</label>
             <textarea id="blog-text"></textarea>
         </div>
-        <button type="submit" class="btn">Create</button>
+        <button type="submit" class="btn">Post</button>
     </form>
 </section>
 
@@ -23,21 +23,6 @@
         <li>
             {{> post-info post }}
             <a href="/dashboard/edit/{{post.id}}" class="edit-link">Edit Post</a>
-        </li>
-        {{/each}}
-    </ol>
-</section>
-{{/if}}
-
-{{#if comments.length}}
-<section>
-    <h2>Your Comments</h2>
-
-    <ol class="post-list">
-        {{#each comments as |comment|}}
-        <li>
-            {{> comments comment }}
-            <a href="/dashboard/edit/{{comment.id}}" class="edit-link">Edit Comment</a>
         </li>
         {{/each}}
     </ol>

@@ -1,10 +1,10 @@
 async function addPostHandler(event) {
     event.preventDefault();
 
-    const title = document.querySelector('input[name="post-title"]').value;
-    const blog_text = document.querySelector('input[name="blog-text"]').value;
+    const title = document.querySelector('input').value;
+    const blog_text = document.querySelector('textarea').value;
 
-    const response = await fetch('/api/posts', {
+    const response = await fetch(`/api/posts`, {
         method: 'POST',
         body: JSON.stringify({
             title,
@@ -15,7 +15,7 @@ async function addPostHandler(event) {
         }
     });
 
-    if (response.ok) {z
+    if (response.ok) {
         document.location.replace('/dashboard');
     } else {
         alert(response.statusText);

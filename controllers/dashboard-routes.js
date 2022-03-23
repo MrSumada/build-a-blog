@@ -7,7 +7,6 @@ router.get('/', (req, res) => {
     Post.findAll({
         where: {
             user_id:req.session.user_id,
-            // loggedIn: req.session.loggedIn
         },
         attributes: ['id', 'title', 'blog_text', 'created_at'],
         include: [
@@ -26,7 +25,10 @@ router.get('/', (req, res) => {
     })
     .then(dbPostData => {
         const posts = dbPostData.map(post => post.get({ plain: true }));
-        res.render('dashboard', { posts, loggedIn: true });
+        res.render('dashboard', { 
+            posts, 
+            loggedIn: true 
+        });
     })
     .catch(err => {
         console.log(err);
@@ -38,7 +40,6 @@ router.get('/edit/:id', (req, res) => {
     Post.findOne({
         where: {
             user_id: req.session.user_id,
-            // loggedIn: req.session.loggedIn
         },
         attributes: ['id', 'title', 'blog_text', 'created_at'],
         include: [
