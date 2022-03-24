@@ -1,23 +1,26 @@
-<article class="post">
-    <div class="title">
-        <h3>{{post.title}}</h3>
-        <p class="date-info">{{format_date post.created_at}}</p>
-    <div class="blog_text">
-        <p>{{post.blog_text}}</p>
-    </div>
-</article>
+<div class="single-post">
+    <article class="post">
+        <div class="title">
+            <h3>{{post.title}}</h3>
+            <p class="date-info">{{format_date post.created_at}}</p>
+        </div>
+        <div class="blog_text">
+            <p>{{post.blog_text}}</p>
+        </div>
+    </article>
 
-{{#if loggedIn}}
-<form class="comment-form">
-    <div>
-        <textarea name="comment-body"></textarea>
-    </div>
+    {{#if loggedIn}}
+    <form class="comment-form">
+        <div>
+            <textarea name="comment-body"></textarea>
+        </div>
 
-    <div>
-        <button type="submit">add comment</button>
-    </div>
-</form>
-{{/if}}
+        <div>
+            <button type="submit">add comment</button>
+        </div>
+    </form>
+    {{/if}}
+</div>
 
 {{> comments post.comments }}
 

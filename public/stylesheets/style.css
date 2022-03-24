@@ -160,7 +160,7 @@ ol li:nth-of-type(even) {
     display: flex;
     justify-content: space-between;
 }
-.title a, .date-info {
+.title a, .title h3, .date-info {
     margin: 0px;
     display: inline;
 }
@@ -170,9 +170,17 @@ ol li:nth-of-type(even) {
     margin: -1.5% 0 2% 0;
 }
 
+.single-post {
+    padding: 5%;
+}
+
 
 .comment-form {
     margin-bottom: 5%;
+}
+
+.comments {
+    padding: 5%;
 }
 
 .comment {
