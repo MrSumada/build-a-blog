@@ -1,8 +1,8 @@
-async function loginHandler(event) {
+async function editHandler(event) {
     event.preventDefault();
 
-    const title = document.querySelector('input[name="post-title"]').value;
-    const blog_text = document.querySelector('input[name="blog-text"]').value;
+    const title = document.querySelector('input').value;
+    const blog_text = document.querySelector('textarea').value;
     const post_id = window.location.toString().split('/')[
         window.location.toString().split('/').length - 1
     ];
@@ -26,4 +26,4 @@ async function loginHandler(event) {
     }
 }
 
-document.querySelector('.edit-post-form').addEventListener('submit', loginHandler);
+document.querySelector('.edit-post-form').addEventListener('submit', editHandler);

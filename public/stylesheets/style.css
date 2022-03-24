@@ -22,7 +22,7 @@ a:hover {
 }
 
 button {
-    background-color: #006b39;
+    background-color: #12a05e;
     border: 0;
     padding: 1%;
     color: white;
@@ -34,11 +34,6 @@ button {
 
 button:hover {
     background-color: #12a05e;
-}
-
-.post-list {
-    margin: 0;
-    padding: 0;
 }
 
 textarea, input {
@@ -65,14 +60,6 @@ form label {
     display: block;
 }
 
-.wrapper {
-    width: 100%;
-    min-height: 100%;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-}
-
 header, footer {
     color: white;
     border-bottom: 1px solid #ccc;
@@ -92,6 +79,23 @@ main {
     flex: 1;
 }
 
+nav a {
+    padding-left: 30px;
+}
+
+.wrapper {
+    width: 100%;
+    min-height: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.post-list {
+    margin: 0;
+    padding: 0;
+}
+
 .btn-no-style {
     background: none;
     border: none;
@@ -107,7 +111,7 @@ main {
 
 .btn-no-style:hover {
     background: none;
-    color: #00351c;
+    color: #12a05e;
 }
 
 .login {
@@ -115,19 +119,30 @@ main {
     justify-content: center;
     flex-direction: column;
     align-items: center;
-    /* height: 100%; */
+    height: 80vh;
 }
 
-.login-form, .signup-form {
+.login-wrapper, .signup-wrapper {
     margin-top: 50px;
 }
 
+.login input {
+    width: 50vw;
+    height: 30px;
+    padding: 1%;
+    font-size: 15px;
+}
+
+.login button {
+    font-size: 15px;
+}
+
 .delete-post-btn {
-    background-color: #d41414;
+    background-color: #ff643d;
 }
 
 .delete-post-btn:hover {
-    background-color: #ff643d;
+    background-color: #853e2d;
 }
 
 .post {
@@ -149,6 +164,10 @@ ol li:nth-of-type(even) {
     color: #7d7d7d;
 }
 
+.post-title {
+    padding: 0 5%;
+}
+
 .post-list li {
     border-bottom: 2px solid #eee;
     padding: 10px 50px;
@@ -167,24 +186,28 @@ ol li:nth-of-type(even) {
 
 .edit-link {
     display: block;
-    margin: -1.5% 0 2% 0;
+    margin: 1.5% 0 1.5% 0;
 }
 
-.single-post {
+.single-post, .edit-wrapper {
     padding: 5%;
+}
+
+.comments {
+    padding: 2% 0;
 }
 
 
 .comment-form {
-    margin-bottom: 5%;
+    margin: 2% 0;
 }
 
-.comments {
-    padding: 5%;
+.comment-form textarea {
+    width: 90vw;
 }
 
 .comment {
-    padding: 1%;
+    padding: 5px 5%;
     margin-bottom: 1%;
 }
 
@@ -210,12 +233,20 @@ ol li:nth-of-type(even) {
     width: 80vw;
 }
 
-.post-title {
-    padding: 0 50px;
-}
-
 .edit-post-form {
     margin-bottom: 5%;
+}
+
+.edit-post-form input, .edit-post-form textarea {
+    font-size: 17px;
+    padding: 10px 10px;
+    width: 90vw;
+    height: 30px;
+}
+
+.edit-post-form textarea {
+    min-height: 400px;
+    margin-bottom: 10px;
 }
 
 footer {
@@ -224,4 +255,5 @@ footer {
     justify-content: center;
     padding: 1%;
     font-size: 110%;
+    height: 80px;
 }

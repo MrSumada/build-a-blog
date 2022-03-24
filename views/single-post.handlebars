@@ -9,6 +9,8 @@
         </div>
     </article>
 
+{{> comments post.comments }}
+
     {{#if loggedIn}}
     <form class="comment-form">
         <div>
@@ -22,7 +24,7 @@
     {{/if}}
 </div>
 
-{{> comments post.comments }}
+
 
 {{#if loggedIn}}
 <script src="/javascript/comment.js"></script>

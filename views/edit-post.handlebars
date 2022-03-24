@@ -1,4 +1,4 @@
-<article>
+<article class="edit-wrapper">
     <a href="/dashboard"> Back to your dashboard</a>
 
     <h2>Edit Post</h2>
@@ -7,6 +7,9 @@
         <div>
             <input name="post-title" type="text" value="{{post.title}}" />
         </div>
+
+        <textarea name="blog-body">{{post.blog_text}}</textarea>
+
         <button type="submit">Save post</button>
         <button type="button" class="delete-post-btn">Delete post</button>
     </form>
@@ -14,15 +17,9 @@
     <form class="comment-form">
         <div>
             {{>comments post.comments}}
-            <textarea name="blog-body">{{post.blog_text}}</textarea>
-        </div>
-
-        <div>
-            <button type="submit">edit post</button>
         </div>
     </form>
 </article>
 
 <script src="/javascript/edit-post.js"></script>
 <script src="/javascript/delete-post.js"></script>
-<script src="/javascript/comment.js"></script>

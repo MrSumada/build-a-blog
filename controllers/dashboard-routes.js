@@ -11,7 +11,7 @@ router.get('/', withAuth, (req, res) => {
         include: [
         {
             model: User,
-            attributes: ['username']
+            attributes: ['id', 'username']
         },
         {
             model: Comment,
@@ -23,7 +23,7 @@ router.get('/', withAuth, (req, res) => {
         }]
     })
     .then(dbPostData => {
-        const posts = dbPostData.map(post => post.get({ plain: true }));
+        const posts = dbPostData.map(post => post.get({ plain: true })).reverse();
         res.render('dashboard', { 
             posts, 
             loggedIn: true 
@@ -38,6 +38,7 @@ router.get('/', withAuth, (req, res) => {
 router.get('/edit/:id', withAuth, (req, res) => {
     Post.findOne({
         where: {
+            id: req.params.id,
             user_id: req.session.user_id,
         },
         attributes: ['id', 'title', 'blog_text', 'created_at'],
