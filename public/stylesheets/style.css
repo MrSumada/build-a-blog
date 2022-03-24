@@ -184,6 +184,14 @@ ol li:nth-of-type(even) {
     display: inline;
 }
 
+.title-name {
+    display: flex;
+}
+
+.title-name p {
+    margin: 0 5px;
+}
+
 .edit-link {
     display: block;
     margin: 1.5% 0 1.5% 0;
@@ -207,7 +215,7 @@ ol li:nth-of-type(even) {
 }
 
 .comment {
-    padding: 5px 5%;
+    padding: 5px 15px;
     margin-bottom: 1%;
 }
 

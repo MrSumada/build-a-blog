@@ -5,13 +5,13 @@ const withAuth = require('../utils/withAuth');
 router.get('/', withAuth, (req, res) => {
     Post.findAll({
         where: {
-            user_id:req.session.user_id,
+            user_id: req.session.user_id,
         },
-        attributes: ['id', 'title', 'blog_text', 'created_at'],
+        attributes: ['id', 'title', 'blog_text', 'created_at', 'user_id'],
         include: [
         {
-            model: User,
-            attributes: ['id', 'username']
+            model: User, 
+            attributes: ['username']
         },
         {
             model: Comment,
@@ -24,8 +24,10 @@ router.get('/', withAuth, (req, res) => {
     })
     .then(dbPostData => {
         const posts = dbPostData.map(post => post.get({ plain: true })).reverse();
+        const user = dbPostData.get({ plain: true });
         res.render('dashboard', { 
-            posts, 
+            posts,
+            user,
             loggedIn: true 
         });
     })
