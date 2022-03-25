@@ -1,6 +1,9 @@
 <article class="post">
-    <div class="title">
-        <a href="/post/{{id}}">{{title}}</a>
+    <div class="single-post-title">
+        <div class="title-name">
+            <a href="/post/{{id}}">{{title}}</a>
+            <p>by <strong>{{user.username}}</strong></p>
+        </div>
         <p class="date-info">{{format_date created_at}}</p>
     </div>
     <div class="blog_text">
