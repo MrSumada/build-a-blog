@@ -14,6 +14,7 @@
 
 {{> comments post.comments }}
 
+    {{!-- add comment forms in logged in --}}
     {{#if loggedIn}}
     <form class="comment-form">
         <div>
@@ -26,6 +27,7 @@
     </form>
     {{/if}}
 
+    {{!-- Add login reminder if logged out --}}
     {{#unless loggedIn}}
     <p class="login-reminder">Please login to leave a comment</p>
     {{/unless}}

@@ -17,4 +17,7 @@ const seedAll = async () => {
     process.exit(0);
 }
 
+// Create database in mysql with "source db/schema.sql"
+// seeds build_a_blog_db database with "node seeds" call.
+
 seedAll();

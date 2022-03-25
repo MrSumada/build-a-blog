@@ -14,10 +14,12 @@
     </form>
 </section>
 
+{{!-- add posts section if posts exist --}}
 {{#if posts.length}}
 <section>
     <h2 class="post-title">Your Posts</h2>
 
+    {{!-- add each post as li --}}
     <ol class="post-list">
         {{#each posts as |post|}}
         <li>

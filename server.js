@@ -11,9 +11,7 @@ const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
 const sess = {
     secret: "Super secret secret, I love dog's but I'm also allergic",
-    cookie: {
-        // maxAge: 30000
-    },
+    cookie: {},
     resave: false,
     saveUninitialized: true,
     store: new SequelizeStore({
@@ -22,17 +20,6 @@ const sess = {
 };
 
 app.use(session(sess));
-// app.get('/session', function (req, res, next) {
-//     if (req.session.views) {
-//         req.session.views++;
-//         res.write('<p> Session expires after 1 min of in activity: ' + (req.session.cookie.expires) + '</p>');
-//         res.end();
-//     } else {
-//         req.session.views = 1;
-//         window.alert("You've been idle for a while, we went ahead and logged you out. Safety first!");
-//         res.end('New session is started');
-//     }
-// })
 
 const helpers = require('./utils/helpers');
 const hbs = exphbs.create({ helpers });

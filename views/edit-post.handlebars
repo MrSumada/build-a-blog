@@ -14,11 +14,13 @@
         <button type="button" class="delete-post-btn">Delete post</button>
     </form>
 
+    {{#if comments.length}}
     <form class="comment-form">
         <div>
             {{>comments post.comments}}
         </div>
     </form>
+    {{/if}}
 </article>
 
 <script src="/javascript/edit-post.js"></script>

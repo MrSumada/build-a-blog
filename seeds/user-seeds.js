@@ -1,7 +1,5 @@
-const sequelize = require('../config/connection');
-const { User, Post } = require('../models');
-
-// do wee need the Post model????
+// const sequelize = require('../config/connection');
+const { User } = require('../models');
 
 const users = [
     {
