@@ -25,6 +25,10 @@
         </div>
     </form>
     {{/if}}
+
+    {{#unless loggedIn}}
+    <p class="login-reminder">Please login to leave a comment</p>
+    {{/unless}}
 </div>
 
 
