@@ -3,8 +3,6 @@
 }
 
 body, html {
-    height: 100%;
-    padding: 0;
     margin: 0;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: #333;
@@ -26,6 +24,7 @@ button {
     border: 0;
     padding: 1%;
     color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-weight: bold;
     transition: background-color .1s;
     cursor: pointer;
@@ -71,7 +70,6 @@ header, footer {
 }
 
 header a {
-    font-size: 1em;
     color: white;
 }
 
@@ -83,10 +81,15 @@ nav a {
     padding-left: 30px;
 }
 
+ol {
+    list-style-type: none;
+}
+
+ol li:nth-of-type(even) {
+    background-color: #ddd;
+}
+
 .wrapper {
-    width: 100%;
-    min-height: 100%;
-    margin: 0 auto;
     display: flex;
     flex-direction: column;
 }
@@ -102,11 +105,9 @@ nav a {
     padding: 0;
     cursor: pointer;
     text-decoration: none;
-    color: white;
     font-size: 100%;
-    font-weight: bold;
     transition: color .1s;
-    margin-left: 16px;
+    margin-left: 30px;
 }
 
 .btn-no-style:hover {
@@ -145,27 +146,19 @@ nav a {
     background-color: #853e2d;
 }
 
-.post {
+.single-post {
     margin-bottom: 2%;
     line-height: 150%;
 }
 
-ol {
-    list-style-type: none;
-}
-
-ol li:nth-of-type(even) {
-    background-color: #ddd;
-}
-
-.post .title span {
+.single-post .title span {
     font-style: italic;
     font-size: 90%;
     color: #7d7d7d;
 }
 
 .post-title {
-    padding: 0 5%;
+    padding: 0 50px;
 }
 
 .post-list li {
@@ -173,12 +166,12 @@ ol li:nth-of-type(even) {
     padding: 10px 50px;
 }
 
-.title {
+.single-post-title {
     margin-top: 10px;
     display: flex;
     justify-content: space-between;
 }
-.title a, .title h3, .date-info {
+.single-post-title a, .single-post-title h3, .date-info {
     margin: 0px;
     display: inline;
 }
@@ -196,11 +189,11 @@ ol li:nth-of-type(even) {
     margin: 1.5% 0 1.5% 0;
 }
 
-.single-post, .edit-wrapper {
+.single-post-wrapper, .edit-wrapper {
     padding: 5%;
 }
 
-.comments {
+.comments-list {
     padding: 2% 0;
 }
 
@@ -212,9 +205,8 @@ ol li:nth-of-type(even) {
     width: 90vw;
 }
 
-.comment {
-    padding: 5px 15px;
-    margin-bottom: 1%;
+.single-comment {
+    margin-bottom: 5px;
 }
 
 .comment-header {
@@ -232,12 +224,6 @@ ol li:nth-of-type(even) {
 
 .comment:nth-child(odd) {
     background-color: #fff5eb;
-}
-
-.comment .meta {
-    font-size: 90%;
-    margin-bottom: .5%;
-    opacity: .6;
 }
 
 .post-create {
@@ -272,7 +258,5 @@ footer {
     border-top: 1px solid #ccc;
     display: flex;
     justify-content: center;
-    padding: 1%;
-    font-size: 110%;
     height: 80px;
 }
