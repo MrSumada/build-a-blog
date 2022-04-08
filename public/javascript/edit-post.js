@@ -12,7 +12,6 @@ async function editHandler(event) {
         body: JSON.stringify({
             title,
             blog_text,
-
         }),
         headers: {
             'Content-Type': 'application/json'
